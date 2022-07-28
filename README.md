@@ -14,7 +14,7 @@ git add.
 
 git commit -m ‘날짜, 몇문제풀었는지’
 
-gir push -u origin master
+git push -u origin master
 ```
 
 순으로 pull받은 후 push하기(안그럼 에러뜰수도)
