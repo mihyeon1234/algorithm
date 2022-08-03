@@ -1,0 +1,25 @@
+num = int(input())
+dx = list()
+dy = list()
+for i in range(num):
+    x,y = map(int, input().split())
+    dx.append(x)
+    dy.append(y)
+ini = 0
+inj = 0
+su = 0
+for i in dx:
+    ini += 1
+    for j in dx:
+        inj += 1
+        if ini != inj and abs(i - j) < 10:
+            if abs(dy[dx.index(i)] - dy[dx.index(j)]) < 10:
+                su += (10 -abs(i - j))*(10 -abs(dy[dx.index(i)] - dy[dx.index(j)]))/2
+
+print(int(num*100 - su))
+
+이렇게 실행 했었는데 2번 이상 중복되는값은 찾지못함
+그래서 2차원 배열로 100*100을 만들고 값은 0으로,
+x,y값을 받아서 그로부터 +10칸까지 는 1로 변환
+중복이 되더라도 1이여서 
+최종으로 모든 배열을 합친 값을 더함
