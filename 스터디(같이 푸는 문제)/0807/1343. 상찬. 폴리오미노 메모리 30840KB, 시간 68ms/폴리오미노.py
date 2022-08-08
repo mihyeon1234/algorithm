@@ -1,5 +1,5 @@
 poli = input()
-X_list = [1]
+X_list = [1] # XXX...XXX 3, 3, 3, 3 ,
 for i in range(1, len(poli)):
     if poli[i] == poli[i - 1]:
         X_list[-1] += 1
