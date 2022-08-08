@@ -10,7 +10,7 @@ for i in range(1,a+1):
 for j in range(1,b+1):
     if str(b/j)[-1] == '0':
         bli.append(int(b/j))
-ma = list(set(ali).intersection(bli))
+ma = list(set(ali).intersection(bli)) #
 
 aali = []
 bbli = []
@@ -28,6 +28,6 @@ while bb <= a*b:
 mb = list(set(aali).intersection(bbli))
 
 
-print(max(ma))
+print(max(ma)) #최대공약수
 print(min(mb))
 ##intersection(교집합)에 대해서 더 알아보기!!

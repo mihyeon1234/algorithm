@@ -1,16 +1,11 @@
 import sys
-
 n, m = map(int, sys.stdin.readline().split())
 
-A = set()
-B = set()
+A = list()
 
 for i in range(1, max(n, m) + 1):
-    if n % i == 0:
-        A.add(i)
-    if m % i == 0:
-        B.add(i)
+    if n % i == 0 and m % i == 0:
+        A.append(i)
 
-ans1 = max(list(A & B))
-print(ans1)
-print(ans1 * (n // ans1) * (m // ans1))
+print(A[-1])
+print(n * m // A[-1])
