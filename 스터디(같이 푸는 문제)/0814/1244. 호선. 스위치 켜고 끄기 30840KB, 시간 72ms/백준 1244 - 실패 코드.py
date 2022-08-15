@@ -1,4 +1,6 @@
 import copy
+import sys
+sys.stdin = open('input.txt')
 
 n = int(input())
 s_lst = list(map(int, input().split()))
