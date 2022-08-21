@@ -26,10 +26,10 @@ for i in range(p):
                         sw_lst[(B - 1) + k] = 0
                 else:
                     break
-        if sw_lst[B - 1] == 0:     # 기준이 되는 숫자의 값을 변경
-            sw_lst[B - 1] = 1
-        else:
-            sw_lst[B - 1] = 0
+            if sw_lst[B - 1] == 0:     # 기준이 되는 숫자의 값을 변경
+                sw_lst[B - 1] = 1
+            else:
+                sw_lst[B - 1] = 0
 
 for i in range(len(sw_lst)):       # 20개씩 끊어서 출력
     if i % 10 == 9:
