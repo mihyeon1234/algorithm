@@ -9,7 +9,7 @@ step = 1
 c = 0
 r = 0
 
-while step <= R * C:
+while step <= R * C:                            # 달팽이와 똑같음, 대신 속도가 너무 느림
     if r + dr[d] > R - 1 or c + dc[d] > C - 1:
         d += 1
     elif area[r + dr[d]][c + dc[d]] != 0:
