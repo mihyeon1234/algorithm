@@ -7,7 +7,6 @@ row = 0
 column = 0
 m_row = 0
 m_column = 0
-lst.sort()
 for i in lst:
     if i[0] == 1:
         if

@@ -1,33 +1,40 @@
 import sys
 sys.stdin = open('input.txt')
 
-C, R = map(int, input().split())
-K = int(input())
-con = list([-1] + [0] * C + [-1] for _ in range(R))
-con.append([-1] * (C + 2))
-con.insert(0, [-1] * (C + 2))
-di = [1, 0, -1, 0]
-dj = [0, 1, 0, -1]
-i = 1
-j = 1
-dr = 0
-ans = 0
-
-for k in range(1, C * R + 1):
-    if k == K:
-        ans = [j, i]
-        break
-    con[i][j] = k
-    ni = i + di[dr]
-    nj = j + dj[dr]
-    if 1 <= ni <= R and 1 <= nj <= C and con[ni][nj] == 0:
-        i, j = ni, nj
-    else:
-        dr = (dr + 1) % 4
-        i = i + di[dr]
-        j = j + dj[dr]
-if ans == 0:
-    print(ans)
-else:
-    for t in ans:
-        print(t, end=' ')
+bingo = list(list(map(int, input().split())) for _ in range(5))
+turn = list(list(map(int, input().split())) for _ in range(5))
+bb = []
+for i in bingo:
+    for j in i:
+        bb.append(j)
+tt = []
+for i in turn:
+    for j in i:
+        tt.append(j)
+cnt = 0
+for k in tt:
+    i = bb.index(k) // 5
+    j = bb.index(k) % 5
+    bingo[i][j] = 0
+    if i == j:
+        if bingo[i][j] == bingo[(i + 1) % 5][(i + 1) % 5] == bingo[(i + 2) % 5][(i + 2) % 5] == bingo[(i + 3) % 5][(i + 3) % 5] == bingo[(i + 4) % 5][(i + 4) % 5] == 0:
+            cnt += 1
+            if cnt == 3:
+                print(tt.index(k) + 1)
+                break
+    if i + j == 4:
+        if bingo[i][j] == bingo[(i + 1) % 5][4 -((i + 1) % 5)] == bingo[(i + 2) % 5][4 - ((i + 2) % 5)] == bingo[(i + 3) % 5][4 - ((i + 3) % 5)] == bingo[(i + 4) % 5][4 - ((i + 4) % 5)] == 0:
+            cnt += 1
+            if cnt == 3:
+                print(tt.index(k) + 1)
+                break
+    if bingo[i].count(0) == 5:
+        cnt += 1
+        if cnt == 3:
+            print(tt.index(k) + 1)
+            break
+    if bingo[i][j] == bingo[(i + 1) % 5][j] == bingo[(i + 2) % 5][j] == bingo[(i + 3) % 5][j] == bingo[(i + 4) % 5][j] == 0:
+        cnt += 1
+        if cnt == 3:
+            print(tt.index(k) + 1)
+            break
