@@ -8,6 +8,9 @@ for _ in range(6):
     arr.append(m)
 
 all = arr+arr+arr
+print(arr)
+print(all)
+
 mx = max(arr)
 mx_id = all.index(mx)+6
 
