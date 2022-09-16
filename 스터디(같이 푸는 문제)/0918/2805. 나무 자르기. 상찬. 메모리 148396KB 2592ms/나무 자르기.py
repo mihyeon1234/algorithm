@@ -1,9 +1,12 @@
 import sys
-input = sys.stdin.readline
-N, M = map(int, input().split())
-li = list(map(int, input().split()))
+
+N, M = map(int, sys.stdin.readline().split())
+li = list(map(int, sys.stdin.readline().split()))
 end = max(li)                                   # 가장 최대값 추출하여 끝점으로 설정
-start = 1                                       # 1이 가장 최소값이므로 시작점으로 설정
+if end - M > 0:
+    start = end - M
+else:
+    start = 1                                       # 1이 가장 최소값이므로 시작점으로 설정
 while start <= end:
     rest = 0
     mid = (start + end) // 2
