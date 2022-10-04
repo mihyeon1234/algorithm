@@ -3,9 +3,7 @@ sys.stdin = open('input.txt')
 
 
 def f(n, lst):
-    global minus
-    global zero
-    global plus
+    global minus, zero, plus
     num = n // 3
     for i in range(0, n, num):
         for j in range(0, n, num):
